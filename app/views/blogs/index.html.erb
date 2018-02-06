@@ -15,6 +15,7 @@
         <h3>
           <%= link_to blog.title, blog %>
         </h3>
+        <p id="blog-created-at"><strong>Posted:</strong> <%= blog.created_at.strftime("%m-%d-%Y") %></p>
         <p class="blog-text">
           <%= truncate(blog.body, :length => 250) %>
         </p>

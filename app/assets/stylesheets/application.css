@@ -13,3 +13,12 @@
 .blog-pag {
 	font-size: 2em;
 }
+@media only screen and (max-width: 600px) {
+  .blog-pag {
+    font-size: 1.4em;
+  }
+}
+
+#blog-created-at {
+	text-indent: 30px;
+}

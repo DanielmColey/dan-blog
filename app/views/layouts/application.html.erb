@@ -11,6 +11,38 @@
   </head>
 
   <body>
+  	<div class="row">
+		  <div class="col-md-3 header-line">
+		    <div id="dan-logo">    
+		    </div>
+		  </div>
+		    <div class="col-md-9">
+		      <ul class="nav nav-pills pull-right">
+		        <li>
+		          <a href="http://localhost:4567">HOME</a>
+		        </li>
+		        <li>
+		          <a href="http://localhost:4567/about.html">ABOUT</a>
+		        </li>
+		        <li>
+		          <a href="http://localhost:4567/portfolio.html">PORTFOLIO</a>
+		        </li>
+		        <li>
+		          <a href="http://localhost:4567/contact.html">CONTACT</a>
+		        </li>
+		        <li>
+		          <a href="http://localhost:3000">BLOG</a>
+		        </li>
+		        <li>
+		          <% if user_signed_in? %>
+							  <%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %>        
+							<% else %>
+							  <%= link_to('LOGIN', new_user_session_path) %>  
+							<% end %>
+		        </li>
+		      </ul>
+		    </div>
+		</div>
     <%= yield %>
 
     <!-- jQuery -->

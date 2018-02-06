@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+<% if user_signed_in? %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %> |
+  <%= link_to 'New Blog', new_blog_path %>        
+<% else %>
+  <%= link_to('Login', new_user_session_path) %>  
+<% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-9">
+      <h1>blog posts</h1>
+      <br>
+      <% @blogs.each do |blog| %>
+        <h3>
+          <%= link_to blog.title, blog %>
+        </h3>
+        <p class="blog-text">
+          <%= truncate(blog.body, :length => 250) %>
+        </p>
+        <% if user_signed_in? == true %>
+          <%= link_to 'Edit', edit_blog_path(blog) %> |
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      <% end %>
+      <br>
+      <%= will_paginate @blogs, class: 'blog-pag' %>
+      <br>
+    </div>
+  </div>
+</div>

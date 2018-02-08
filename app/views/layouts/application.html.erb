@@ -8,38 +8,61 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
-
   <body>
-  	<div class="row">
+		<div class="row top-piece">
 		  <div class="col-md-3 header-line">
-		    <div id="dan-logo">    
-		    </div>
+		  	<h1>Blog Posts</h1>
 		  </div>
 		    <div class="col-md-9">
 		      <ul class="nav nav-pills pull-right">
-		        <li>
+		        <li class="norm-nav">
 		          <a href="http://localhost:4567">HOME</a>
 		        </li>
-		        <li>
+		        <li class="norm-nav">
 		          <a href="http://localhost:4567/about.html">ABOUT</a>
 		        </li>
-		        <li>
+		        <li class="norm-nav">
 		          <a href="http://localhost:4567/portfolio.html">PORTFOLIO</a>
 		        </li>
-		        <li>
+		        <li class="norm-nav">
 		          <a href="http://localhost:4567/contact.html">CONTACT</a>
 		        </li>
-		        <li>
-		          <a href="http://localhost:3000">BLOG</a>
-		        </li>
-		        <li>
+		        <li class="norm-nav">
 		          <% if user_signed_in? %>
 							  <%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %>        
 							<% else %>
 							  <%= link_to('LOGIN', new_user_session_path) %>  
 							<% end %>
 		        </li>
+			      <li class="dropdown pull-right drop-nav">
+							 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fas fa-bars"></i></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="http://localhost:4567">HOME</a>
+								</li>
+								<li>
+									<a href="http://localhost:4567/about.html">ABOUT</a>
+								</li>
+								<li>
+									<a href="http://localhost:4567/portfolio.html">PORTFOLIO</a>
+								</li>
+								<li>
+									<a href="http://localhost:4567/contact.html">CONTACT</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+				          <% if user_signed_in? %>
+									  <%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %>        
+									<% else %>
+									  <%= link_to('LOGIN', new_user_session_path) %>  
+									<% end %>
+								</li>
+		        	</li>
+							</ul>
+						</li>
 		      </ul>
 		    </div>
 		</div>

@@ -23,3 +23,54 @@
 	text-indent: 30px;
 }
 
+.header-line {
+	text-indent: 20px;
+	color: white;
+}
+
+.top-piece {
+	background-color: #2980B9;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+.nav a {
+	color: white;
+	margin-top: 30px;
+}
+
+.nav a:hover {
+	color: black;
+}
+
+@media (max-width: 800px) {
+	.norm-nav {
+		display: none;
+		visibility: hidden;
+	}
+
+}
+
+@media (min-width: 800px) {
+	.drop-nav {
+		display: none;
+		visibility: hidden;
+	}
+
+}
+
+.fa-bars {
+	color: white;
+	font-size: 3em;
+	border: solid 2px white;
+	padding: 2px 4px;
+	border-radius: 5px;
+}
+
+
+
+
+
+
+
+

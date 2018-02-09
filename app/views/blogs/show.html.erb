@@ -16,7 +16,7 @@
 				<br>
 				<br>
 			<p class="blog-text">
-				<%= @blog.body %>
+				<%= simple_format @blog.body %>
 			</p>
 			<% if user_signed_in? == true %>
 				<%= link_to 'Edit', edit_blog_path(@blog) %> |
@@ -26,10 +26,19 @@
 			<% end %>
 		</div>
 		<div class="col-md-1">
+			
 		</div>
 		<div class="col-md-3">
 			<h3>Other Articles</h3>
-			<%= @show_blogs %>
+			<% @blogs.each do |blog| %>
+        <h3>
+          <%= link_to blog.title, blog %>
+        </h3>
+        <p id="blog-created-at"><strong>Posted:</strong> <%= blog.created_at.strftime("%m-%d-%Y") %></p>
+        <p class="blog-text">
+          <%= truncate(blog.body, :length => 100) %>
+        </p>
+      <% end %>
 		</div>
 	</div>
 </div>

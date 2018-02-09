@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-1">
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 border-line">
       <% if user_signed_in? %>
         <%= link_to 'New Blog', new_blog_path %>
       <% end %>
@@ -25,6 +25,36 @@
       <% if user_signed_in? %>
         <%= link_to 'New Blog', new_blog_path %>
       <% end %>
+    </div>
+    <div class="col-md-2">
+      <form class="search-bar">
+        <br>
+        <input class="form-control" type="text" name="firstname" placeholder="search"><br>
+      </form>
+      <h3 class="topic-title">Topics:</h3>
+      <ul class="topic-list">
+        <a href="#"><li>Rails</li></a>
+        <a href="#"><li>Ruby</li></a>
+        <a href="#"><li>Javascript</li></a>
+        <a href="#"><li>OOP</li></a>
+        <a href="#"><li>Better Coding</li></a>
+        <a href="#"><li>Code Tricks</li></a>
+        <a href="#"><li>Styling</li></a>
+        <a href="#"><li>Rails</li></a>
+        <a href="#"><li>Ruby</li></a>
+        <a href="#"><li>Javascript</li></a>
+        <a href="#"><li>OOP</li></a>
+        <a href="#"><li>Better Coding</li></a>
+        <a href="#"><li>Code Tricks</li></a>
+        <a href="#"><li>Styling</li></a>
+        <a href="#"><li>Rails</li></a>
+        <a href="#"><li>Ruby</li></a>
+        <a href="#"><li>Javascript</li></a>
+        <a href="#"><li>OOP</li></a>
+        <a href="#"><li>Better Coding</li></a>
+        <a href="#"><li>Code Tricks</li></a>
+        <a href="#"><li>Styling</li></a>
+      </ul>
     </div>
   </div>
 </div>

@@ -67,7 +67,45 @@
 	border-radius: 5px;
 }
 
+.topic-list li {
+	list-style: square;
+	font-size: 1.5em;
+	padding-top: 10px;
+}
 
+.topic-title {
+	text-indent: 20px;
+	text-decoration: underline;
+}
+
+.search-bar {
+	font-size: 1.5em;
+}
+
+.border-line {
+	border-right: 2px dashed #2980B9;
+}
+
+@media (max-width: 991px) {
+	.border-line {
+		border-right: 2px dashed white;
+	}
+
+	.topic-title {
+		display: none;
+		visibility: hidden;
+	}
+
+	.topic-list {
+		display: none;
+		visibility: hidden;
+	}
+
+	.search-bar {
+		display: none;
+		visibility: hidden;
+	}
+}
 
 
 

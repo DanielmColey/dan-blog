@@ -4,13 +4,13 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.paginate(:page => params[:page], :per_page => 10)
+    @blogs = Blog.paginate(:page => params[:page], :per_page => 8)
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @show_blogs = Blog.first
+    @blogs = Blog.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /blogs/new
